@@ -49,16 +49,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'AlarmView',
           path: '/alarmView',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'AlarmView')
-              : AlarmViewWidget(),
+          builder: (context, params) => AlarmViewWidget(),
         ),
         FFRoute(
           name: 'EventLogView',
           path: '/eventLogView',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'EventLogView')
-              : EventLogViewWidget(),
+          builder: (context, params) => EventLogViewWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
